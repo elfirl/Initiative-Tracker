@@ -20,6 +20,7 @@
 			  <div class="col-md-6">
 			  	<h2>Input Side</h2>
 			  	<form class="form-inline" id="combatant-form" method="POST">
+
 					<div class="combatant" id="combatant1">
 					  <div class="form-group">
 					    <label for="combantantName1" class="sr-only">Name</label>
@@ -30,6 +31,7 @@
 					    <input type="text" class="roll form-control" name="combatantRoll1" id="initiativeRoll1" placeholder="15">
 					  </div>
 					</div>
+
 					<div class="combatant" id="combatant2">
 					  <div class="form-group">
 					    <label for="combantantName2" class="sr-only">Name</label>
@@ -40,32 +42,40 @@
 					    <input type="text" class="roll form-control" name="combatantRoll2" id="initiativeRoll2" placeholder="15">
 					  </div>
 					</div>
-				  <div class="form-group">
-				    <label for="combantantName3" class="sr-only">Name</label>
-				    <input type="text" class="form-control" name="combatantName3" id="combatantName3" placeholder="Combatant's Name">
+
+					<div class="combatant" id="combatant3">
+					  <div class="form-group">
+					    <label for="combantantName3" class="sr-only">Name</label>
+					    <input type="text" class="name form-control" name="combatantName3" id="combatantName3" placeholder="Combatant's Name">
+					  </div>
+					  <div class="form-group">
+					    <label for="initiativeRoll3" class="sr-only">Roll</label>
+					    <input type="text" class="roll form-control" name="combatantRoll3" id="initiativeRoll3" placeholder="15">
+					  </div>
+				  	</div>
+
+				  <div class="combatant" id="combatant4">
+					  <div class="form-group">
+					    <label for="combantantName4" class="sr-only">Name</label>
+					    <input type="text" class="name form-control" name="combatantName4" id="combatantName4" placeholder="Combatant's Name">
+					  </div>
+					  <div class="form-group">
+					    <label for="initiativeRoll4" class="sr-only">Roll</label>
+					    <input type="text" class="roll form-control" name="combatantRoll4" id="initiativeRoll4" placeholder="15">
+					  </div>
 				  </div>
-				  <div class="form-group">
-				    <label for="initiativeRoll3" class="sr-only">Roll</label>
-				    <input type="text" class="form-control" name="combatantRoll3" id="initiativeRoll3" placeholder="15">
+
+				  <div class="combatant" id="combatant5">
+					  <div class="form-group">
+					    <label for="combantantName5" class="sr-only">Name</label>
+					    <input type="text" class="name form-control combatantName" name="combatantName5" id="combatantName5" placeholder="Combatant's Name">
+					  </div>
+					  <div class="form-group">
+					    <label for="initiativeRoll5" class="sr-only">Roll</label>
+					    <input type="text" class="roll form-control combatantRoll" name="combatantRoll5" id="initiativeRoll5" placeholder="15">
+					  </div>
 				  </div>
-				  <br />
-				  <div class="form-group">
-				    <label for="combantantName4" class="sr-only">Name</label>
-				    <input type="text" class="form-control" name="combatantName4" id="combatantName4" placeholder="Combatant's Name">
-				  </div>
-				  <div class="form-group">
-				    <label for="initiativeRoll4" class="sr-only">Roll</label>
-				    <input type="text" class="form-control" name="combatantRoll4" id="initiativeRoll4" placeholder="15">
-				  </div>
-				  <br />
-				  <div class="form-group">
-				    <label for="combantantName5" class="sr-only">Name</label>
-				    <input type="text" class="form-control combatantName" name="combatantName5" id="combatantName5" placeholder="Combatant's Name">
-				  </div>
-				  <div class="form-group">
-				    <label for="initiativeRoll5" class="sr-only">Roll</label>
-				    <input type="text" class="form-control combatantRoll" name="combatantRoll5" id="initiativeRoll5" placeholder="15">
-				  </div>
+
 				  <br />
 				  <button type="submit" class="btn btn-default input-submit-button">Submit Rolls</button>
 				</form>

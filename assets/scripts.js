@@ -11,11 +11,11 @@ $(document).ready(function() {
 
 		// Grabs anything with a class of combatant, and for each one, executes a function with parameters index and field
 		$('.combatant').each(function(index, field) {
-			// jQuery looks for any field with (a label?) of name, gets its input value, then assigns that to the variable.
+			// jQuery looks for any field with a class of name, gets its input value, then assigns that to the variable.
 			var name = $(field).find('.name').val();
-			// jQuery looks for any field with (a label?) of roll, gets its input value, then assigns that to the variable.
+			// jQuery looks for any field with a class of roll, gets its input value, then assigns that to the variable.
 			var roll = $(field).find('.roll').val();
-			// Creates the object pair of {name: roll} based on the above variables.
+			// Adds the object pair of {name: roll} based on the above variables. How does it append vs overwrite?
 			rolls[name] = roll;
 		});
 
