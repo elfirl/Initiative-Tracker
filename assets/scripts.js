@@ -1,8 +1,9 @@
 $(document).ready(function() {
     
 	$(".input-submit-button").on("click", function() {
+			event.preventDefault();
 			var fields = {};
-			$("form [name]").each(function() {
+			$(".form-control").each(function() {
 				fields[this.name] = this.value;
 			});
 			console.log(fields);
