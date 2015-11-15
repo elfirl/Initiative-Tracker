@@ -18,7 +18,7 @@ $(document).ready(function() {
 			// Adds the object pair of {name: roll} based on the above variables. How does it append vs overwrite?
 			rolls[name] = roll;
 		});
-
+		$(".initiative-list").html(rolls);
 		console.log(rolls);
 	});
 
