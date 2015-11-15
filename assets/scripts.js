@@ -1,29 +1,25 @@
 $(document).ready(function() {
 
-	// $(".input-submit-button").on("click", function() {
-	// 		event.preventDefault();
-	// 		var fields = {};
-	// 		$(".form-control").each(function() {
-	// 			fields[this.name] = this.value;
-	// 		});
-	// 		console.log(fields);
-	// });
 
-  $(".input-submit-button").on("click", function(event) {
-    event.preventDefault();
+	// Checks to see if the on click event is triggerd from the button with class input-submit-button.
+	$(".input-submit-button").on("click", function(event) {
+		// Prevents the default behavior from the button submitting.
+		event.preventDefault();
 
-    var rolls = {};
-    // OR var rolls = [];
+		// Make a variable and assigns an empty object into it.
+		var rolls = {};
 
-    $('.combatant').each(function(index, field) {
-      var name = $(field).find('.name').val();
-      var roll = $(field).find('.roll').val();
+		// Grabs anything with a class of combatant, and for each one, executes a function with parameters index and field
+		$('.combatant').each(function(index, field) {
+			// jQuery looks for any field with (a label?) of name, gets its input value, then assigns that to the variable.
+			var name = $(field).find('.name').val();
+			// jQuery looks for any field with (a label?) of roll, gets its input value, then assigns that to the variable.
+			var roll = $(field).find('.roll').val();
+			// Creates the object pair of {name: roll} based on the above variables.
+			rolls[name] = roll;
+		});
 
-      rolls[name] = roll;
-      // OR rolls.push({name: name, roll: roll});
-    });
-
-    console.log(rolls);
-  });
+		console.log(rolls);
+	});
 
 });
