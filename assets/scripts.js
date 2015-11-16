@@ -18,11 +18,12 @@ $(document).ready(function() {
 			// Adds the object pair of {name: roll} based on the above variables. How does it append vs overwrite?
 			rolls[name] = roll;
 		});
-		$(".initiative-list").append("<ul id='list'></ul>");
+
+		// Grabs each key pair from rolls, and adds the pairs to <li>, to a <ul> with id of list.
 		$.each(rolls, function(key, value){
 			$("#list").append("<li>" + key + " " + value + "</li>");
-			// $(".initiative-list").append(key + value);
 		});
+
 		console.log(rolls);
 	});
 
