@@ -15,3 +15,20 @@ div.main-container {
 .input-submit-button {
 	margin-top: 5px;
 }
+
+ul {
+	padding: 0;
+	list-style: none;	
+	width: 25%;
+}
+
+li:before {
+	content: "\e014";
+	font-family: 'Glyphicons Halflings';
+	font-size: 15px;
+	margin-right: 5px;
+}
+
+.list-roll {
+	float: right;
+}

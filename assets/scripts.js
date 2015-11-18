@@ -1,19 +1,5 @@
-// var allRolls = JSON.parse(localStorage.getItem('allRolls')) || [];
-
-// var MyApp = {
-// 	allRolls: [];
-// }
-
-// MyApp.allRolls = [];
-
-
-// // function myFunction() {
-
-// // }
-
-// MyApp.myFunction = function() {};
-
 var allRolls = [];
+var uniqueId = 0;
 
 
 $(document).ready(function() {
@@ -41,12 +27,15 @@ $(document).ready(function() {
 		var rolls = [];
 
 		$(".combatant").each(function(index, field) {
+			// uniqueId++; 
+
 			var name = $(field).find(".name").val();
 			var roll = $(field).find(".roll").val();
 
 			// If both vars have a value, make a new array containing both inside of the rolls array.
 			if(name && roll) {
 				rolls.push([name, roll]);
+				// rolls.push({id: uniqueId, name: name, roll: roll});
 			}
 		});
 
@@ -60,15 +49,20 @@ $(document).ready(function() {
 			var name = value[0];
 			var roll = value[1];
 
-			$("#list").append("<li>" + name + " " + roll + "</li>");
+			// var name = value.name;
+			// var roll = value.roll;
+			// var id = value.id;
+
+			$("#list").append("<li>" + "<span class='list-name'>" + name + "</span>" + " " + "<span class='list-roll'>" + roll + "</span>" + "</li>");
+			//  id='combatantId-" + id + "' << add to the li to assign it an id
 		});
 
-		// localStorage.setItem('allRolls', localStorage.setItem(JSON.stringify(allRolls)));
 	}
 
 	// Sorts the output in decending order. a - b for ascending.
 	function sortArraysByRoll(a, b) {
 		return b[1] - a[1];
+		// return b.roll - a.roll;
 	}
 
 	function clearInput() {
