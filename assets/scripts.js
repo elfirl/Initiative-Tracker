@@ -53,8 +53,10 @@ $(document).ready(function() {
 			// var roll = value.roll;
 			// var id = value.id;
 
-			$("#list").append("<li>" + "<span class='list-name'>" + name + "</span>" + " " + "<span class='list-roll'>" + roll + "</span>" + "</li>");
-			//  id='combatantId-" + id + "' << add to the li to assign it an id
+			// $("#list").append("<li>" + "<span class='list-name'>" + name + "</span>" + " " + "<span class='list-roll'>" + roll + "</span>" + "</li>");
+			$("#list").append("<li id='combatantId-" + key + "'>" + "<i class='glyphicon glyphicon-remove remove-x-icon'></i>" + "<span class='list-name'>" + name + "</span>" + " " + "<span class='list-roll'>" + roll + "</span>" + "</li>");
+
+			//  id='combatantId-" + id + "'
 		});
 
 	}

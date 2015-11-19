@@ -22,13 +22,10 @@ ul {
 	width: 25%;
 }
 
-li:before {
-	content: "\e014";
-	font-family: 'Glyphicons Halflings';
-	font-size: 15px;
-	margin-right: 5px;
-}
-
 .list-roll {
 	float: right;
+}
+
+.remove-x-icon {
+	padding-right: 5px;
 }
