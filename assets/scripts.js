@@ -4,6 +4,8 @@ var uniqueId = 0;
 
 $(document).ready(function() {
 
+	$("input[name=combatantName1]").focus();
+	
 	// Executs funcitons when an element with the specified class is clicked.
 	$(".input-submit-button").on("click", function(event) {
 		event.preventDefault();
@@ -16,11 +18,19 @@ $(document).ready(function() {
 		clearInput();
 	});
 
+	// Clears the list as well as the allRolls variable
 	$(".clear-submit-button").on("click", function(event) {
 		event.preventDefault();
 
 		clearInitiativeList();
+		$("input[name=combatantName1]").focus();
 	});
+
+	// Code to delete an entry
+	$(document).on("click", 'i', function() {
+        alert($(this).attr("id"));
+    });
+
 
 	// Sets the value of name and roll to the input field specified, and puts them in an array of arrays.
 	function getCombatants() {
@@ -54,8 +64,9 @@ $(document).ready(function() {
 			// var id = value.id;
 
 			// $("#list").append("<li>" + "<span class='list-name'>" + name + "</span>" + " " + "<span class='list-roll'>" + roll + "</span>" + "</li>");
-			$("#list").append("<li id='combatantId-" + key + "'>" + "<i class='glyphicon glyphicon-remove remove-x-icon'></i>" + "<span class='list-name'>" + name + "</span>" + " " + "<span class='list-roll'>" + roll + "</span>" + "</li>");
+			$("#list").append("<li>" + "<i class='glyphicon glyphicon-remove remove-x-icon' id='combatantId-" + key + "'></i>" + "<span class='list-name'>" + name + "</span>" + "<span class='list-roll'>" + roll + "</span>" + "</li>");
 
+			// id='combatantId-" + key + "'
 			//  id='combatantId-" + id + "'
 		});
 
