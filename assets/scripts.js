@@ -28,7 +28,13 @@ $(document).ready(function() {
 
 	// Code to delete an entry
 	$(document).on("click", 'i', function() {
-        alert($(this).attr("id"));
+		// Get the ID from i
+		var deleteThis = ($(this).attr("data-combatant-id"));	
+		// Remove that indexed item from the array
+		allRolls.splice(deleteThis,1);
+		// Rebuild and display the array
+		allRolls.sort(sortArraysByRoll);
+		displayRolls(allRolls);
     });
 
 
@@ -36,8 +42,7 @@ $(document).ready(function() {
 	function getCombatants() {
 		var rolls = [];
 
-		$(".combatant").each(function(index, field) {
-			// uniqueId++; 
+		$(".combatant").each(function(index, field) { 
 
 			var name = $(field).find(".name").val();
 			var roll = $(field).find(".roll").val();
@@ -45,7 +50,6 @@ $(document).ready(function() {
 			// If both vars have a value, make a new array containing both inside of the rolls array.
 			if(name && roll) {
 				rolls.push([name, roll]);
-				// rolls.push({id: uniqueId, name: name, roll: roll});
 			}
 		});
 
@@ -59,15 +63,7 @@ $(document).ready(function() {
 			var name = value[0];
 			var roll = value[1];
 
-			// var name = value.name;
-			// var roll = value.roll;
-			// var id = value.id;
-
-			// $("#list").append("<li>" + "<span class='list-name'>" + name + "</span>" + " " + "<span class='list-roll'>" + roll + "</span>" + "</li>");
-			$("#list").append("<li>" + "<i class='glyphicon glyphicon-remove remove-x-icon' id='combatantId-" + key + "'></i>" + "<span class='list-name'>" + name + "</span>" + "<span class='list-roll'>" + roll + "</span>" + "</li>");
-
-			// id='combatantId-" + key + "'
-			//  id='combatantId-" + id + "'
+			$("#list").append("<li>" + "<i class='glyphicon glyphicon-remove remove-x-icon' data-combatant-id='" + key + "'></i>" + "<span class='list-name'>" + name + "</span>" + "<span class='list-roll'>" + roll + "</span>" + "</li>");
 		});
 
 	}
@@ -75,7 +71,6 @@ $(document).ready(function() {
 	// Sorts the output in decending order. a - b for ascending.
 	function sortArraysByRoll(a, b) {
 		return b[1] - a[1];
-		// return b.roll - a.roll;
 	}
 
 	function clearInput() {
